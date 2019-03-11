@@ -217,6 +217,14 @@ newitems <- QAIG::itemgen(stem_text = stem_text, formulae = formulae, N = N, C =
 newitems[, c(1, 2, 7, 8)]
 ```
 
+### 5: Using `save.csv` argument
+
+Generated items can be saved in a `.csv` file by using the `save.csv` argument. If a name of the file is passed to this argument, all the generated items will be saved automatically in `.csv` format in the working directory.
+
+As example:
+
+`itemgen(stem_text, formulae, N, C = C, options_affix = options_affix, save.csv = 'New Items')`
+
 
 
 [Reference: AIG for Developing Mathematics Achievement Items](https://onlinelibrary.wiley.com/doi/epdf/10.1111/jedm.12166)
