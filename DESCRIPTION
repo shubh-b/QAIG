@@ -1,17 +1,17 @@
 Package: QAIG
 Type: Package
 Title: Automatic Item Generator for Quantitative Multiple-Choice Items
-Version: 0.1.2
+Version: 0.1.3
 Date: 2019-03-12
 Authors@R: c(person("Subhabrata", family="Patra (Shubh)", email = "shubh.b.patra@gmail.com",
            role = c("aut", "cre")),
            person("Bao Sheng", family="Loe (Aiden)", role = "aut"))
 Maintainer: Subhabrata Patra (Shubh) <shubh.b.patra@gmail.com>
-Description: A tool for Automatic Generation of Sibling Items from a Parent Item defined by the
-           user. It is an implementation of the process Automatic Item Generation (AIG) focused
-           on generating Quantitative Multiple-Choice type of Items.
-Reference: Susan E. Embretson, Neal M. Kingston (2018) <doi:10.1111/jedm.12166>
-URL: https://onlinelibrary.wiley.com/doi/full/10.1111/jedm.12166
+Description: A tool for Automatic Generation of Sibling Items from a Parent Item model defined by
+           the user. It is an implementation of the process Automatic Item Generation (AIG) focused
+           on generating Quantitative Multiple-Choice type of Items (see Embretson, Kingston 
+           (2018) <doi:10.1111/jedm.12166>).
+URL: https://www.researchgate.net/publication/239794821_The_Role_of_Item_Models_in_Automatic_Item_Generation
 Depends: R (>= 3.5.0)
 License: GPL-3
 Imports: stringr, Formula, stats, utils

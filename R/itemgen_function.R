@@ -41,9 +41,9 @@
 #' @importFrom utils write.csv
 #'
 #' @references
-#' \url{https://www.tandfonline.com/doi/abs/10.1080/10401334.2016.1146608?journalCode=htlm20}
-#' Mark J. Gierl, Claire Touchie, Debra Pugh, André-Philippe Boulais & André De Champlain
-#' Using Automatic Item Generation to Improve the Quality of MCQ Distractors (2016)
+#' \url{https://www.researchgate.net/publication/239794821_The_Role_of_Item_Models_in_Automatic_Item_Generation}
+#' Mark J. Gierl, Hollis Lai
+#' The Role of Item Models in Automatic Item Generation (2011)
 #' @references
 #' \url{https://onlinelibrary.wiley.com/doi/epdf/10.1111/jedm.12166}
 #' Susan E. Embretson,  Neal M. Kingston
