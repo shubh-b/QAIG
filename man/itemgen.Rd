@@ -32,7 +32,7 @@ and within its columns if the argument 'save.csv' is not missing in the function
 }
 \description{
 \code{itemgen} function generates group of sibling items from a
-parent item defined by user.
+parent item model defined by user.
 }
 \details{
 User has to develop a short schema that contains formation of stem

@@ -16,14 +16,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-Automatic Item Generation is an old concept which was first introduced by John R. Bormuth (1969). This process has not been advanced that much in past few decades. Due to recent demand of test items and high costs in item development, this process has become in light of many educators and psychometricians again.
+Automatic item generation (AIG) is an old concept which was first introduced by John R. Bormuth (1969). This process has not been advanced that much in past few decades. Due to recent demand of test items and high costs in item development, this process has become in light of many educators and psychometricians again.
 
 **QAIG** is an effort to provide tool for generating bunch of dissimilar sibling items from a **Quantitative Multiple-Choice** type parent item. When we think about generation of sibling items from a parent item, main focus becomes to have:
 
 - generated items that look dissimilar to each other as much as possible.
 - effective distractors in each of the items.
 
-**QAIG** package enables users to generate large number of items from a parent item
+**QAIG** package enables users to generate large number of items from a parent item:
 
 - by applying possible dissimilarities within the sibling items.
 - by taking care of effectiveness of the distractors for each sibling item.
@@ -38,7 +38,7 @@ Automatic Item Generation is an old concept which was first introduced by John R
 The usage of this function is illustrated here.
 
 ### 1: Formation of the parent item.
-**For `stem_text`:** User of this package should construct a parent item i.e. a *stem text* along with desired number of *response choices*. All the changeable elements (variables) in the stem should be replaced by specific notations enclosed by `[]`. Character variable should be written as `[C1], [C2], [C3] … etc.`. Number variables should be written as `[N1], [N2], [N3] … etc.`.
+**For `stem_text`:** User of this package should construct a parent item model i.e. a *stem text* along with desired number of *response choices*. All the changeable elements (variables) in the stem should be replaced by specific notations enclosed by `[]`. Character variable should be written as `[C1], [C2], [C3] … etc.`. Number variables should be written as `[N1], [N2], [N3] … etc.`.
 
 **For `N` and `C`:** For each of the number variables (`[N1], [N2], [N3], …`) in the *stem text*, user has to decide a set of numbers that should be declared as vectors `n1, n2, n3, …` respectively. Vectors of characters `c1, c2, c3, …` for each character variable should also be declared similar way. All the *input number vectors* and *input character vectors* should be wrapped within `list` separately as the inputs for `N` and `C` in `itemgen()` function.
 

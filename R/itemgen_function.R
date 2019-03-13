@@ -3,7 +3,7 @@
 #' @aliases itemgen
 #'
 #' @description \code{itemgen} function generates group of sibling items from a
-#' parent item defined by user.
+#' parent item model defined by user.
 #'
 #' @details User has to develop a short schema that contains formation of stem
 #' (question text) along with response choices (formulae) of the parent item as an
