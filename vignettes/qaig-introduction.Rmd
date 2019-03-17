@@ -38,7 +38,7 @@ Automatic item generation (AIG) is an old concept which was first introduced by 
 The usage of this function is illustrated here.
 
 ### 1: Formation of the parent item.
-**For `stem_text`:** User of this package should construct a parent item model i.e. a *stem text* along with desired number of *response choices*. All the changeable elements (variables) in the stem should be replaced by specific notations enclosed by `[]`. Character variable should be written as `[C1], [C2], [C3] … etc.`. Number variables should be written as `[N1], [N2], [N3] … etc.`.
+**For `stem_text`:** User of this package should construct a parent item model i.e. a *stem text* along with desired number of *response choices*. All the changeable elements (variables) in the stem of an item should be replaced by specific notations enclosed by `[]`. Character variable should be written as `[C1], [C2], [C3] … etc.`. Number variables should be written as `[N1], [N2], [N3] … etc.`.
 
 **For `N` and `C`:** For each of the number variables (`[N1], [N2], [N3], …`) in the *stem text*, user has to decide a set of numbers that should be declared as vectors `n1, n2, n3, …` respectively. Vectors of characters `c1, c2, c3, …` for each character variable should also be declared similar way. All the *input number vectors* and *input character vectors* should be wrapped within `list` separately as the inputs for `N` and `C` in `itemgen()` function.
 
@@ -73,7 +73,7 @@ newitems
 ```
 
 ### 2: Using `options_affix` argument.
-Suffix or prefix or both can be attached with the numeric values in the response choices by using `options_affix` argument of `itemgen()` function. Response choice names in `formulae` and in `options_affix` must be same. If user wants to declare difficulty level of the item, that should be added within `options_affix`.
+Suffix or prefix or both can be attached with the numeric values in the response choices by using `options_affix` argument of `itemgen()` function. Response choice names in `formulae` and in `options_affix` must be same. If user wants to declare difficulty level of the item, that also can be added within `options_affix`.
 
 ### Example II
 ```{R include = TRUE}

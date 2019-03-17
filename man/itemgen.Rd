@@ -18,9 +18,9 @@ with necessary values or functions that help to calculate the numeric value for 
 \item{C}{(Optional) A list of character input vector(s) for the character variable(s) in the stem if there is any.}
 
 \item{options_affix}{(Optional) A list that consists of vectors with prefixes and suffixes (if there is any) of the
-numeric values in the options along with any text that can be included as an option with the item.}
+numeric values in the options along with any text that can be included as an option of the items.}
 
-\item{ans_key}{(Optional) A text that indicates the correct response if it is not specified within formulae by '~'.}
+\item{ans_key}{(Optional) A text that indicates the correct response if it is NOT specified within formulae by '~'.}
 
 \item{save.csv}{(Optional) A name text given by the user for the output .csv file, if user wants to save the newly
 generated sibling items in working directory as a data.frame.}
@@ -28,56 +28,63 @@ generated sibling items in working directory as a data.frame.}
 \value{
 This function returns a data frame that contains stem, options, answer
 key etc. for all the generated sibling items within its rows to display in console
-and within its columns if the argument 'save.csv' is not missing in the function.
+and within its columns in the saved .csv file if the input for the argument 'save.csv'
+is given in \code{itemgen} function.
 }
 \description{
 \code{itemgen} function generates group of sibling items from a
 parent item model defined by user.
 }
 \details{
-User has to develop a short schema that contains formation of stem
-(question text) along with response choices (formulae) of the parent item as an
-input. Number-variables and character-variables must be specified in special
-manner in the stem. \code{itemgen} function delivers the changes in the positions
-of the variables in stem and calculates the response choices automatically by
-taking members from the input vectors given by user in the schema. As a result,
-several permutations of changes in the variables lead to generation of
-new group of items.
+User has to develop a short schema for the parent item model that contains
+formation of stem along with formula for each of the response choices of the parent
+item as the input. Number-variables and character-variables must be specified in
+particular manner in the stem. Each formula must be written in new line as text and
+should be declared together as an object. \code{itemgen} function delivers the changes
+in the positions of the variables in stem and calculates the response choices
+automatically by taking members from the input vectors given by user in the schema.
+As a result, several permutations of changes in the variables lead to generation of
+new group of items. Please see vignette of 'QAIG' for more details.
 }
 \note{
-The formula model for each option must be distinct. Otherwise this
-program will throw an error. If same numeric value needs to be produced in many
-options, those models can be made different by adding 0 or multiplying 1
+The formula model for each option must be distinct. \code{itemgen} function
+does NOT permit same numeric value as two or more response choices and hence it will
+throw an error. If same numeric value needs to be produced as more than one
+response choices, those models can be made different by adding 0 or multiplying 1
 with the terms in the model.
 
 The model for the distractor options in formulae must be written using "?".
 Correct response option can be written using EITHER "~" OR "?". In OR case correct
-response must be indicated by the function argument "ans_key" to stop this \code{itemgen}
-function throw an error.
+response must be indicated by the function argument "ans_key" to stop \code{itemgen}
+function throw an error. Please see section 2 and 3 in vignette of 'QAIG'.
 }
 \examples{
-stem_text <- "What is the sum of first [n1] [c1] ?"
-n1 <- c(5, 8, 11, 14, 17)
-c1 <- c("natural numbers", "non-zero positive integers")
-N <- list(n1 = n1)
+stem_text <- "The sum value of all the odd [C1] between [N1] and [N2] is"
+n1 <- c(20, 24, 28, 32)
+n2 <- c(48, 52, 56)
+c1 <- c("natural numbers", "integers")
+N <- list(n1 = n1, n2 = n2)
 C <- list(c1 = c1)
-formulae <- "Option_A ? 2*n1-1\\nOption_B ? 3*n1-2\\nOption_C ? n1*(n1+1)/2\\nOption_D ? n1*(n1-1)/2\\n"
-options_affix <- list(Option_A = c("Sum value = ", ""), Option_B = c("Sum value = ", ""),
-Option_C = c("Sum value = ", ""), Option_D = c("Sum value = ", ""))
+formulae <- "Option_A ? sum((n1+1) : (n2-1))/2\\n
+Option_B ~ (length(seq(n1+1, n2-1, by = 2)))*(n1+n2)/2\\n
+Option_C ? sum(n1 : n2)/2\\n
+Option_D ? (length(seq(n1, n2, by = 2)))*(n1+n2)/2\\n"
 
-itemgen(stem_text = stem_text, formulae = formulae, N = N, C = C, ans_key = "Option_C",
-options_affix = options_affix)
+options_affix <- list(Option_A = c("", ""), Option_B = c("", ""), Option_C = c("", ""),
+Option_D = c("", ""), Difficulty = "MEDIUM")
+
+# itemgen() function can be used as:
+itemgen(stem_text = stem_text, formulae = formulae, N = N, C = C, options_affix = options_affix)
 
 
 }
 \references{
+Mark J. Gierl, Hollis Lai (2011). The Role of Item Models in Automatic Item Generation.
 \url{https://www.researchgate.net/publication/239794821_The_Role_of_Item_Models_in_Automatic_Item_Generation}
-Mark J. Gierl, Hollis Lai
-The Role of Item Models in Automatic Item Generation (2011)
 
+Susan E. Embretson,  Neal M. Kingston (2018). Automatic Item Generation: A More Efficient Process
+for Developing Mathematics Achievement Items?
 \url{https://onlinelibrary.wiley.com/doi/epdf/10.1111/jedm.12166}
-Susan E. Embretson,  Neal M. Kingston
-Automatic Item Generation: A More Efficient Process for Developing Mathematics Achievement Items? (2018)
 }
 \author{
 Shubh Patra and Bao Sheng Loe
