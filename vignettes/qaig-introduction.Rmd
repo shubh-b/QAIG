@@ -1,10 +1,10 @@
 ---
 title: "QAIG: Automatic Item Generator for Quantitative Multiple-Choice Items"
-author: "Subhabrata Patra"
-date: "`r Sys.Date()`"
+author: "Subhabrata"
+date: "2020-05-19"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{QAIG Introduction}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 Automatic item generation (AIG) is an old concept which was first introduced by John R. Bormuth (1969). This process has not been advanced that much in past few decades. Due to recent demand of test items and high costs in item development, this process has become in light of many educators and psychometricians again.
 
-**QAIG** is an effort to provide tool for generating bunch of dissimilar sibling items from a **Quantitative Multiple-Choice** type parent item. When we think about generation of sibling items from a parent item, main focus becomes to have:
+**QAIG** is an effort to provide tool by means of R function for generating group of dissimilar sibling items from  **Quantitative Multiple-Choice** type parent item model. When we think about generating sibling items from a parent item, main focus becomes to have:
 
 - generated items that look dissimilar to each other as much as possible.
 - effective distractors in each of the items.
